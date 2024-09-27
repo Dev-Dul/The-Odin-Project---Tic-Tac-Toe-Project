@@ -1,0 +1,321 @@
+
+body{
+    padding: 0;
+    margin: 0;
+    min-height: 100vh;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    overflow: hidden;
+    color: linen;
+    background: #020412;
+    font-family: "Orbitron";
+}
+
+#error{
+    position: absolute;
+    top: -100%;
+    left: 35%;
+    height: 3rem;
+    margin-top: 20px;
+    border-radius: 15px;
+    padding: 0 10px;
+    border: 1px solid black;
+    background: #0af;
+    z-index: 1000;
+    animation: error .2s ease infinite;
+}
+
+@keyframes error {
+ from{
+    transform: rotate(1.5deg);
+  }to{
+    transform: rotate(-1.5deg);
+  }
+}
+
+.bgAnimate{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    z-index: -1;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+    overflow: hidden;
+}
+
+.bx{
+    background: transparent;
+    filter: brightness(1.1);
+    transition: 2s ease;
+    position: relative;
+}
+
+.bx:hover{
+    background: rgba(0, 175, 255, 0.7);
+    transition-duration: 0s;
+
+}
+
+.color{
+    background: rgba(0, 175, 255, 0.7);
+}
+
+.backAnimate{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: #0af;
+    filter: blur(60px);
+    z-index: 10;
+    animation: move 6s linear infinite;
+}
+
+@keyframes move {
+    0%{
+        top: -60px;
+    }100%{
+        top: 120%;
+    }
+}
+
+header{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+header div{
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+header p{
+    margin: 0.2rem 0.8rem;
+    font-size: 0.85rem;
+}
+
+.container{
+    width: 100%;
+    text-align: center;
+}
+
+dialog::backdrop{
+    background-color: rgba(255, 255, 255, 0.1);
+    filter: blur(50px);
+}
+
+#first-dialog{
+    width: 250px;
+}
+
+#first-dialog, #second-dialog{
+    background-image: linear-gradient(#0af 1%, #020412);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s 0s ease-in-out;
+    font-family: "serif";
+}
+
+.show{
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+
+.inputBox{
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+    position: relative;
+    margin-bottom: 1.3rem;
+}
+
+.inputBox.text{
+    height: 2rem;
+    color: white;
+}
+
+.inputBox input[type="text"]{
+    height: 100%;
+    outline: none;
+    border: 1px solid #020412;
+    text-indent: 4px;
+    color: white;
+    background: transparent;
+}
+
+.inputBox span{
+    position: absolute;
+    bottom: 3px;
+    opacity: 0.8;
+    font-style: italic;
+    left: 7px;
+    transition: all ease 0.5s;
+    pointer-events: none;
+}
+
+.inputBox fieldset{
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #020412;
+}
+
+.inputBox input:focus ~span,
+.inputBox input:valid ~span{
+    opacity: 1;
+    background: #020412;
+    color: white;
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 1.3px;
+    transform: translateY(-1.2rem) translateX(5px);
+}
+
+.inputBox:nth-child(2) input:focus ~span,
+.inputBox:nth-child(2) input:valid ~span{
+    border-right: 1px solid #0af;
+    border-left: 1px solid #0af;
+}
+
+
+.inputBox ul li{
+    display: inline;
+    list-style-type: none;
+}
+
+.start-game{
+    width: 100%;
+}
+
+.start-game button{
+    display: block;
+    margin: 0 auto;
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+#second-dialog{
+    position: relative;
+    top: 60%;
+    width: 250px;
+    font-family: "Orbitron";
+    color: white;
+    border-color: #020412;
+}
+
+.announce{
+    transform: translateX(-100vw);
+}
+
+.announce-two{
+    transform: translateX(0);
+}
+
+#next-player{
+   display: block;
+   margin: 0 auto;
+   margin-top: 1rem;
+   width: max-content;
+   padding: 0.3rem;
+   border: 1px solid #0af;
+}
+
+.close{
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    top: 10px;
+    right: 5px;
+    border: 1px solid black;
+    background: red;
+    text-align: center;
+    cursor: pointer;
+}
+
+.elements{
+    width: 100%;
+    text-align: center;
+}
+
+.elements p{
+    margin-top: -3px;
+}
+
+.elements button{
+    display: block;
+    margin: 0 auto;
+    font-size: 0.9rem;
+    padding: 0.3rem;
+}
+
+button{
+    background: rgb(5, 67, 93);
+    border: none;
+    outline: none;
+    color: white;
+    font-family: "Orbitron";
+    cursor: pointer;
+}
+
+table{
+    width: 300px;
+    height: 250px;
+    margin: 0 auto;
+}
+
+table tr td{
+     height: 50px;
+     width: 50px;
+     max-width: 100px;
+     max-height: 100px;
+     border: 1px solid #0af;
+     text-align: center;
+     font-family: "Permanent Marker";
+     font-weight: bolder;
+     font-size: 2rem;
+}
+
+.no-border.one, .no-border.two,.no-border.three{
+    border-top: none;
+}
+
+.no-border.one, .no-border.four, .no-border.seven{
+    border-left:  none;
+}
+.no-border.three, .no-border.six, .no-border.nine{
+    border-right: none;
+}
+
+.no-border.seven, .no-border.eight, .no-border.nine{
+    border-bottom: none;
+}
+
+.disabled{
+    pointer-events: none;
+}
+
+footer{
+    padding: 2rem;
+    width: 100%;
+    text-align: center;
+}
+
+footer h2{
+    font-size: 0.9rem;
+}

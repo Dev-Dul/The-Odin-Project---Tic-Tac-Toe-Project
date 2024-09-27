@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Finger+Paint&family=Orbitron:wght@400..900&family=Permanent+Marker&family=Rubik+Wet+Paint&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="error"><p>Select Different Markers for each player</p></div>
+    <div class="bgAnimate" id="bgAnimate"></div>
+    <header>
+      <div class="deets">
+        <p>Player 1 : <span class="names">Null</span></p>
+        <p>Player 2 : <span class="names">Null</span></p>
+      </div>
+      <div class="wins-count">
+        <p>Player 1 (wins): <span class="winnums">0</span></p>
+        <p>Player 2 (wins): <span class="winnums">0</span></p>
+      </div>
+    </header>
+    <div class="container">
+      <dialog id="first-dialog">
+        <div class="inputBox text">
+          <input type="text" id="player-one" required />
+          <span>Enter player one's name</span>
+        </div>
+        <div class="inputBox">
+          <fieldset>
+            <legend>Select player one's marker</legend>
+            <ul>
+              <li>
+                <label for="#X" class="rs"
+                  ><input
+                    type="radio"
+                    class="rad"
+                    id="X"
+                    name="marker"
+                    value="X"
+                  />X</label
+                >
+              </li>
+              <li>
+                <label for="#O" class="rs"
+                  ><input
+                    type="radio"
+                    class="rad"
+                    id="O"
+                    name="marker"
+                    value="O"
+                  />O</label
+                >
+              </li>
+            </ul>
+          </fieldset>
+        </div>
+        <div class="inputBox text">
+          <input type="text" id="player-two" required />
+          <span>Enter player two's name</span>
+        </div>
+        <div class="inputBox">
+          <fieldset>
+            <legend>Select player two's marker</legend>
+            <ul>
+              <li>
+                <label for="#X2" class="rs"
+                  ><input
+                    type="radio"
+                    class="rad"
+                    id="X2"
+                    name="marker2"
+                    value="X"
+                  />X</label
+                >
+              </li>
+              <li>
+                <label for="#O2" class="rs"
+                  ><input
+                    type="radio"
+                    class="rad"
+                    id="O2"
+                    name="marker2"
+                    value="O"
+                  />O</label
+                >
+              </li>
+            </ul>
+          </fieldset>
+        </div>
+        <div class="start-game">
+          <button id="start">Start Game</button>
+        </div>
+      </dialog>
+      <dialog id="second-dialog">
+        <div class="close">X</div>
+        <div class="elements">
+          <h2>GAME ENDS</h2>
+          <p id="wins">Player 1 wins</p>
+          <button class="reset" id="reset">Play Again</button>
+        </div>
+      </dialog>
+      <table id="table">
+        <tr>
+          <td class="no-border one"></td>
+          <td class="no-border two"></td>
+          <td class="no-border three"></td>
+        </tr>
+        <tr>
+          <td class="no-border four"></td>
+          <td class="no-border five"></td>
+          <td class="no-border six"></td>
+        </tr>
+        <tr>
+          <td class="no-border seven"></td>
+          <td class="no-border eight"></td>
+          <td class="no-border nine"></td>
+        </tr>
+      </table>
+      <p id="next-player"></p>
+    </div>
+    <footer>
+      <h2>Made With ❤️ By DevAbdul. &copy; 2024, all rights reserved.</h2>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
