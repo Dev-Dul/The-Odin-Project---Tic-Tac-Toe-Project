@@ -123,6 +123,8 @@ dialog::backdrop{
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.2s 0s ease-in-out;
     font-family: "serif";
+    color: white;
+    border-color: #020f74;
 }
 
 .show{
@@ -144,6 +146,14 @@ dialog::backdrop{
 .inputBox.text{
     height: 2rem;
     color: white;
+}
+
+.inputBox input, fieldset{
+    border: 1px solid #0af;
+}
+
+.inputBox:nth-child(1) input[type="text"]{
+    border-color: #020f74;
 }
 
 .inputBox input[type="text"]{
@@ -170,7 +180,7 @@ dialog::backdrop{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border: 1px solid #020412;
+    border: 1px solid #0af;
 }
 
 .inputBox input:focus ~span,
@@ -318,4 +328,26 @@ footer{
 
 footer h2{
     font-size: 0.9rem;
+}
+
+
+/* RESPONSIVE CODE */
+
+@media screen and (max-width: 568px){
+    html, body{
+        overflow: hidden;
+    }
+
+    header div{
+        align-items: center;
+    }
+
+    #first-dialog{
+        margin-top: 12rem;
+    }
+
+    footer{
+        padding: 0;
+        text-align: center;
+    }   
 }
